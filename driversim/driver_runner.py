@@ -19,7 +19,7 @@ DATABROKER_ADDRESS = os.environ.get("DATABROKER_ADDRESS", "127.0.0.1:55555")
 DATABROKER_URL = urlparse(f"//{DATABROKER_ADDRESS}/")
 
 
-logger = logging.getLogger("carsim")
+logger = logging.getLogger("driversim")
 logger.setLevel(os.getenv("LOG_LEVEL", "INFO"))
 logging.basicConfig(level=logging.INFO)
 
