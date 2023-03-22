@@ -41,8 +41,8 @@ def update_model_controls(car: SimulatedCar, controls_state: Dict[str, Datapoint
 
     if controls_state[DP_STEER_ANGLE]:
         car.steer_angle = (
-            controls_state[DP_STEER_ANGLE].value * np.pi / 180
-        )  # deg to rad
+            controls_state[DP_STEER_ANGLE].value * np.pi / 180  # deg to rad
+        )
 
 
 def publish_model_state(car: SimulatedCar, kuksa_client: VSSClient) -> None:
