@@ -44,18 +44,19 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
         
+      - name: Login to GHCR
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ghcr.io/vasilvas99/kuksa-carsim/carsim
-          
-      - name: Login to GitHub Container Registry
-        uses: docker/login-action@v2
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -65,8 +66,8 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          context: ./carsim
-          file: ./carsim/Dockerfile
+          context: ./driver_service
+          file: ./driver_service/Dockerfile
           platforms: linux/amd64, linux/arm64
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
