@@ -21,7 +21,7 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CONTEXT_DIR="$SCRIPT_DIR"
 # name of docker image: ${DOCKER_ARCH)/${DOCKER_IMAGE}
-DOCKER_IMAGE="carsim_service"
+DOCKER_IMAGE="carsim"
 REGISTRY="ghcr.io/vasilvas99/kuksa-carsim"
 
 print_usage() {
