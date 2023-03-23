@@ -66,8 +66,8 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          context: ./driver_service
-          file: ./driver_service/Dockerfile
+          context: ./carsim
+          file: ./carsim/Dockerfile
           platforms: linux/amd64, linux/arm64
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
