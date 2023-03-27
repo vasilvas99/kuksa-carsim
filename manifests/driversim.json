@@ -35,7 +35,7 @@
         "env": [
            "DATABROKER_ADDRESS=databroker:55555",
            "LOG_LEVEL=INFO",
-           "SIM_SPEED=1"
+           "SIM_SPEED=2"
         ],
         "cmd": []
     }

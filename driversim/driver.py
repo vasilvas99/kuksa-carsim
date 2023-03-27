@@ -8,10 +8,10 @@ class Driver(DriverBase):
         super().__init__(simulation_speed)
         self._simulation_time = 0
         self._good_driving_cycles = 0
-        self._good_driving_time = 400 * self.simulation_speed  # seconds
+        self._good_driving_time = 75 * self.simulation_speed  # seconds
 
         self._bad_driving_cycles = 0
-        self._bad_driving_time = 400 * self.simulation_speed  # seconds
+        self._bad_driving_time = 75 * self.simulation_speed  # seconds
 
         self._is_good = True
 
@@ -39,9 +39,9 @@ class Driver(DriverBase):
 
         # rescale gaussians based on simulation speed
         sigma_acc = 20 * self.simulation_speed
-        sigma_decel = 10 * self.simulation_speed
-        max_accel_t = 50 * self.simulation_speed
-        max_decel_t = 300 * self.simulation_speed
+        sigma_decel = 20 * self.simulation_speed
+        max_accel_t = 30 * self.simulation_speed
+        max_decel_t = 80 * self.simulation_speed
         turn_time = 50 * self.simulation_speed
         turn_angle_max = 20
         angle_step = 0.5
