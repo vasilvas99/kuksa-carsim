@@ -33,7 +33,7 @@ DP_ACCEL_LONG = "Vehicle.Acceleration.Longitudinal"  # float
 DP_ACCEL_VERT = "Vehicle.Acceleration.Vertical"  # float
 ```
 
-This runner can server as an example of how 
+This runner can serve as an example of how to read/write to the Kuksa Databroker via the kuksa python API. 
 
 ## Driversim
 
