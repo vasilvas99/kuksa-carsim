@@ -66,7 +66,9 @@ Steering angle (degrees):
 
 The runner is similar to the carsim_runner but only publishes to the databroker the system controls and steps through the simulation after each update.
 
-## Basic how to start
+## Running locally
+
+### Basic how to start
 
 Clone the repo and run in 3 separate terminals:
 
@@ -90,9 +92,9 @@ $ pip3 install -r driversim/requirements.txt
 $ python3 driversim/driver_runner.py
 ```
 
-## Using containers from workflows:
+### Using containers from workflows:
 
-### Using host networking
+#### Using host networking
 
 This would be somewhat equivalent to running the scripts directly on the host, but without needing to 
 install the python dependencies (or having python installed on the host).
@@ -118,7 +120,7 @@ docker run --net=host -e "LOG_LEVEL=INFO" --rm -it ghcr.io/vasilvas99/driversim:
 ```
 
 
-### Using container-to-container networking:
+#### Using container-to-container networking:
 
 1) Create a custom docker bridge network :
 
